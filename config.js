@@ -16,6 +16,6 @@ module.exports = {
       "data:write"
     ],
     // Required scope for the client-side viewer
-    public: ["viewables:read"]
+    public: ["viewables:read", "data:write"]
   }
 };

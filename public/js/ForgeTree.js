@@ -65,6 +65,40 @@ function createNewBucket() {
   });
 }
 
+// younes: this method takes the selected object and deletes it
+async function deleteBucket(payload) {
+  const url = `https://developer.api.autodesk.com/oss/v2/buckets/${payload.parent}/objects/${payload.text}`;
+  console.log(payload, payload.parent, payload.id);
+
+  const { access_token } = await getForgeToken();
+  // console.log(access_token);
+  return fetch(url, {
+    method: "Delete",
+    headers: { Authorization: "Bearer " + access_token }
+  });
+}
+/****************************************************************************************** */
+//Abed: Upload an object. If the specified object name already exists in the bucket,
+// the uploaded content will overwrite the existing content for the bucket name/object name combination.
+
+async function overWriteBucket(payload) {
+  const url = `https://developer.api.autodesk.com/oss/v2/buckets/${payload.parent}/objects/${payload.text}`;
+  console.log(payload, payload.parent, payload.id);
+  const { access_token } = await getForgeToken();
+  // console.log(url);
+  return fetch(url, {
+    method: "PUT",
+    headers: { Authorization: "Bearer " + access_token },
+    error: function(err) {
+      if (err.status == 409) alert("Bucket already exists - 409: Duplicated");
+      else {
+        console.log("there in no error");
+      }
+    }
+  });
+}
+/**-------------------------------------------------------------------------- */
+
 function prepareAppBucketTree() {
   $("#appBuckets")
     .jstree({
@@ -158,9 +192,38 @@ function autodeskCustomMenu(autodeskNode) {
             translateObject(treeNode);
           },
           icon: "glyphicon glyphicon-eye-open"
+        },
+        //Abed: this adds for over write
+        overWrite: {
+          label: "Over Wirte",
+          action: function() {
+            var treeNode = $("#appBuckets")
+              .jstree(true)
+              .get_selected(true)[0];
+            overWriteBucket(treeNode).then(() => {
+              $("#appBuckets")
+                .jstree(true)
+                .delete_node(treeNode);
+            });
+          },
+          icon: "glyphicon glyphicon-folder-open"
+        },
+
+        // younes: this adds a new item to the contextual menu
+        delete: {
+          label: "delete",
+          action: () => {
+            const treeNode = $("#appBuckets")
+              .jstree(true)
+              .get_selected(true)[0];
+            deleteBucket(treeNode).then(() => {
+              $("#appBuckets")
+                .jstree(true)
+                .delete_node(node);
+            });
+          }
         }
       };
-      break;
   }
 
   return items;
