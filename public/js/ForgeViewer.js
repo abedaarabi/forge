@@ -5,21 +5,26 @@ function launchViewer(urn) {
     env: "AutodeskProduction",
     getAccessToken: getForgeToken
   };
-
+  //*
   Autodesk.Viewing.Initializer(options, () => {
     viewer = new Autodesk.Viewing.GuiViewer3D(
       document.getElementById("forgeViewer"),
       {
         extensions: [
+          //   "MyAwesomeExtension",
+          //   "handleselectionextension",
+          //   "Autodesk.Sample.Navigator",
+          //   "2d"
+          // ]
           "MyAwesomeExtension",
-          "handleselectionextension",
-          "Autodesk.Sample.Navigator",
-          "2d"
+          "CustomPropertyPanelExtension",
+          "Autodesk.DocumentBrowser",
+          "ImprovedVisualExtension"
         ]
       }
     );
 
-    console.log("d", viewer);
+    // console.log("d", viewer);
 
     viewer.start();
     var documentId = "urn:" + urn;

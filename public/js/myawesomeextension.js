@@ -71,3 +71,4 @@ Autodesk.Viewing.theExtensionManager.registerExtension(
   "MyAwesomeExtension",
   MyAwesomeExtension
 );
+console.log();
