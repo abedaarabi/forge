@@ -15,7 +15,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "forge": "^2.3.0",
     "forge-apis": "^0.4.5",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "socket.io": "^2.3.0"
   }
 }

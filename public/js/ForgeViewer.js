@@ -19,7 +19,9 @@ function launchViewer(urn) {
           "MyAwesomeExtension",
           "CustomPropertyPanelExtension",
           "Autodesk.DocumentBrowser",
-          "ImprovedVisualExtension"
+
+          "Autodesk.Viewing.MarkupsCore",
+          "SharingViewer"
         ]
       }
     );
@@ -38,6 +40,10 @@ function launchViewer(urn) {
 
 function onDocumentLoadSuccess(doc) {
   var viewables = doc.getRoot().getDefaultGeometry();
+  const snapper = new Autodesk.Viewing.Extensions.Snapping.Snapper(viewer);
+  // Autodesk.Viewing.
+
+  console.log(snapper, snapper.activate());
   viewer.loadDocumentNode(doc, viewables).then(i => {
     // documented loaded, any action?
   });

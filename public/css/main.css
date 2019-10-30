@@ -26,7 +26,7 @@ body {
 }
 
 .fill {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
 }
 
 body {
@@ -37,7 +37,7 @@ body {
 #appBuckets {
   overflow: auto;
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 100px);
 }
 
 #forgeViewer {
@@ -61,5 +61,19 @@ body {
 .PCitem {
   cursor: pointer;
   background: none;
-  color: #ffffff;
+  color: #ecbebe;
+}
+
+.sharingViewerButton {
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sharingViewerButtonJoin {
+  background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/share-alt.png);
+}
+
+.sharingViewerButtonExit {
+  background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/sign-out.png);
 }
