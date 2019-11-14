@@ -76,7 +76,11 @@ router.post("/buckets", async (req, res, next) => {
   let payload = new PostBucketsPayload();
   payload.bucketKey =
     config.credentials.client_id.toLowerCase() + "-" + req.body.bucketKey;
+<<<<<<< HEAD
   payload.policyKey = "persistent"; // expires in 24h / never expired
+=======
+  payload.policyKey = "persistent"; // expires in 24h
+>>>>>>> efda2cb113307f9bae80dcdebeaf13ca4f3fbadf
   try {
     // Create a bucket using [BucketsApi](https://github.com/Autodesk-Forge/forge-api-nodejs-client/blob/master/docs/BucketsApi.md#createBucket).
     await new BucketsApi().createBucket(
