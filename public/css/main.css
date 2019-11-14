@@ -3,13 +3,7 @@
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.myawesomeextension {
-  background-image: url(/img/esomeIcon.png);
-  background-size: 35px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: rgb(121, 238, 150);
 }
 
 /* .handleselectionextension {
@@ -32,16 +26,18 @@ body {
 body {
   padding-top: 60px; /* space for the top nav bar */
   margin-right: 30px;
+  color: rgb(5, 5, 4);
 }
 
 #appBuckets {
   overflow: auto;
   width: 100%;
   height: calc(100vh - 100px);
+  opacity: 0.5;
 }
 
 #forgeViewer {
-  width: 100%;
+  width: 150%;
 }
 
 .modelSummaryExtensionIcon {
@@ -49,11 +45,14 @@ body {
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: rgb(248, 237, 133);
+  animation: name duration timing-function delay iteration-count direction
+    fill-mode;
 }
 
 .toolbarNavigatorButton {
   background-image: url(/img/Navigator.png);
-  background-size: 20px;
+  background-size: 80px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -72,8 +71,26 @@ body {
 
 .sharingViewerButtonJoin {
   background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/share-alt.png);
+
+  background-color: rgb(233, 114, 114);
 }
 
 .sharingViewerButtonExit {
   background-image: url(https://github.com/encharm/Font-Awesome-SVG-PNG/raw/master/white/png/24/sign-out.png);
+  background-color: rgb(109, 200, 236);
+}
+
+#dashboard {
+  overflow: auto;
+  height: calc(100vh - 100px);
+}
+
+.transition-width {
+  transition: width 1s ease-in-out;
+}
+
+.dashboardPanel {
+  width: 100%;
+  padding: 3%;
+  display: block;
 }

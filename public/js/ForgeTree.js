@@ -92,7 +92,7 @@ async function overWriteBucket(payload) {
     error: function(err) {
       if (err.status == 409) alert("Bucket already exists - 409: Duplicated");
       else {
-        console.log("there in no error");
+        console.log("there is no error");
       }
     }
   });

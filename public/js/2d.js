@@ -85,6 +85,7 @@ Autodesk.Sample.Navigator = function(viewer, options) {
                       li.id = view2d.data.guid;
                       li.onclick = onSelectView;
                       li.innerText = view2d.data.name;
+
                       ul.append(li);
                     }
                   });

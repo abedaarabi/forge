@@ -16,12 +16,14 @@ function launchViewer(urn) {
           //   "Autodesk.Sample.Navigator",
           //   "2d"
           // ]
-          "MyAwesomeExtension",
+
           "CustomPropertyPanelExtension",
           "Autodesk.DocumentBrowser",
-
+          "ModelSummaryExtension",
+          "HandleSelectionExtension",
           "Autodesk.Viewing.MarkupsCore",
-          "SharingViewer"
+          "SharingViewer",
+          "Autodesk.ADN.Viewing.Extension"
         ]
       }
     );

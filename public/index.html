@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Autodesk Forge Tutorial</title>
+    <title >MoE 3D Projekt</title>
     <meta charset="utf-8" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
 
     <link
       rel="shortcut icon"
-      href="https://github.com/Autodesk-Forge/learn.forge.viewmodels/raw/master/img/favicon.ico"
+      href="/img/moe logo.JPG"
     />
     <!-- Common packages: jQuery, Bootstrap, jsTree -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,7 +20,12 @@
       rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.7/themes/default/style.min.css"
     />
-    <!-- Autodesk Forge Viewer files -->
+     <!--Chart JS  packages-->
+   <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" ></script>
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
+
+
+   <!-- Autodesk Forge Viewer files -->
     <link
       rel="stylesheet"
       href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.4/style.min.css"
@@ -36,22 +37,27 @@
     <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
     <script src="js/ForgeTree.js"></script>
     <script src="js/ForgeViewer.js"></script>
+   
     <script src="./js/handleselectionextension.js"></script>
-    <script src="./js/myawesomeextension.js"></script>
+   
     <script src="./js/PropertyPanel.js"></script>
     <script src="./js/SharingViewerExtension.js"></script>
-    <!-- <script src="/js/socket.io.js"></script> -->
-    <!-- <script src="/js/dockingpanelextension.js"></script> -->
-    <!-- <script src="js/vr-viewer.js"></script> -->
-    <!-- <script src="js/heat.js"></script> -->
+    <script src="./js/myawesomeextension.js"></script>
+    <!-- dashboard files -->
+    <script src="./js/Dashboard/Dashboard.js"> </script>
+    <script src="./js/Dashboard/DashboardPanel.js"> </script>
+    <script src="./js/Dashboard/PanelBarChart.js"> </script>
+    <script src="./js/Dashboard/PanelPieChart.js"> </script>
+    <script src="./js/chart.js"></script>
   </head>
+  
   <body>
     <!-- Fixed navbar by Bootstrap: https://getbootstrap.com/examples/navbar-fixed-top/ -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <ul class="nav navbar-nav left">
           <li>
-            <a class="btn-floating pulse" href="http://moe.dk" target="_blank">
+            <a class="btn-floating pulse container green href="http://moe.dk" target="_blank">
               MOE
               <!-- <img class="responsive-img" alt="MOE" src="" height="15" /> -->
             </a>
@@ -62,7 +68,7 @@
     <!-- End of navbar -->
     <div class="container-fluid fill">
       <div class="row fill">
-        <div class="col-sm-4 fill">
+        <div class="col-md-4 fill">
           <div class="panel panel-default fill">
             <div class="panel-heading" data-toggle="tooltip">
               Buckets &amp; Objects
@@ -87,7 +93,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-8 fill">
+        <div class="col-md-8 fill">
           <div id="forgeViewer"></div>
         </div>
       </div>
@@ -121,6 +127,10 @@
             </button>
             <h4 class="modal-title " id="myModalLabel">Create new bucket</h4>
           </div>
+
+
+
+
           <div class="modal-body">
             <input type="text" id="newBucketKey" class="form-control" /> For
             demonstration purposes, objects (files) are NOT automatically
