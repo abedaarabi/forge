@@ -18,6 +18,6 @@
     "forge": "^2.3.0",
     "forge-apis": "^0.4.5",
     "multer": "^1.4.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.5.0"
   }
 }
